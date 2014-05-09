@@ -36,10 +36,10 @@
     </div>
 	
 	<div id="reactive-manifesto" class="step">
-		<h3>Reactive Programming</h3>
+		<h3>Reactive Manifesto</h3>
 		
 		<ul>
-			<li>Applications should</li>
+			<li>Applications should:</li>
 			<ul>
 				<li>React to <code>events</code></li>
 				<li>React to <code>load</code></li>
@@ -49,45 +49,16 @@
 		</ul>
 	</div>
 
-    <div id="why-actors" class="step">
-      <h3>Why?</h3>
-      <ul>
-        <li>Do you need to build <code>reactive</code> applications?</li>
-
-        <li>Do you need to build <code>fault tolerant</code> applications that can repair themself?</li>
-
-        <li>Do you need to build <code>distributed</code> applications?</li>
-    </div>
-
     <div id="anser-to-why-actors" class="step single-sentence">
       <p>A actor based system will help you with this</p>
     </div>
-
-    <div id="reasons" class="step">
-      <h3>This is what you get:</h3>
-
-      <ul>
-        <li>Actor systems contains a hierachy of actors that works concurrently and process messages independedly.</li>
-
-        <li>Actors can supervise other actors and repair, restart or terminate them when they fail.</li>
-
-        <li>Actor systems provides you with location transperancy, so your system can span multiple machines</li>
-      </ul>
-    </div>
-
-    <div>
-
-
-    <div id="concepts" class="step single-sentenc">
-      <h3>Concepts</h3>
-    </div>
-
+	
     <div id="actors" class="step">
       <h3>Actors</h3>
 
       <ul>
         <li>
-          A actor is a process with a state, a actor will process messages that
+          An actor is a process with a state, a actor will process messages that
           has been sent to its mailbox.
         </li>
 
@@ -99,52 +70,30 @@
           A actor can <code>supervise</code> and create new actors.
         </li>
     </div>
+	
 
-    <div id="messages" class="step">
-      <h3>Messages</h3>
+    <div id="reasons" class="step">
+      <h3>They also:</h3>
+
       <ul>
-        <li>Every actor has a mailbox where it messages will be placed</li>
+        <li>Actors can create other actors and form a natural hierarchy</li>
 
-        <li>Messages should always be immutable</li>
+        <li>Actors can supervise other actors and repair, restart or terminate them when they fail.</li>
 
-        <li>Messages are fire and forget</li>
+        <li>Provide you with location transparency, so your system can span multiple machines easily</li>
       </ul>
-    </div>
-
-    <div id="supervision" class="step">
-      <h3>Supervision</h3>
-      <ul>
-        <li>A actor can <code>supervise</code> other actors</li>
-
-        <li>When a supervised actor fails the supervisor is informed and can choose to:</li>
-
-        <ul>
-          <li>Resume the actor</li>
-          <li>Restart the actor</li>
-          <li>Terminate the actor</li>
-          <li>Or escalate the failure</li>
-        </ul>
-
-        <p>
-          This can be done with <code>one-for-one</code> where every supervised
-          actor is handled seperatly or <code>all-for-one</code> where the
-          decision is applied to all supervised actors.
-      </ul>
-
     </div>
 
     <div id="actor-based-desgin" class="step">
       <h3>Designing a actor based system</h3>
       <ul>
-        <li>Much like any organization actors will naturally form a top down hierachy</li>
+        <li>Much like any organization actors will naturally form a top down hierarchy</li>
 
         <ul>
-          <l|>
-
-          <li>To protect actors and isolate errors a actor can delegate critical or slow tasks to a children actor</li>
+          <li>A actor should protect itself by delegating slow and dangerous operations to another actor</li>
         </ul>
 
-        <li>Actors should not block, if you need to do a blocking operation, delegate that operatino to a child</l|>
+        <li>Actors should not block, if you need to do a blocking operation, delegate that operation to a child</li>
     </div>
 
     <div id="further-reading" class="step">
@@ -159,12 +108,8 @@
 
         <li>
           <a href="http://akka.io">Akka's documentation</a> - Actor framework
-          for the JVM, borrows heavily from Erlang.
+          for the JVM, inspired by Erlang.
         </li>
-    </div>
-
-    <div id="demo" class="step single-sentence">
-        <h3><q>Demo</q></h3>
     </div>
 
     <div id="questinos" class="step single-sentence">
